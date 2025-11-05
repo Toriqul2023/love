@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      text-align: center;
+      padding-top: 50px;
+      color: white;
+    }
+    input {
+      margin: 8px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      width: 200px;
+    }
+    #submit {
+      background: #ff1e56;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 150px;
+    }
+    #submit:hover {
+      background: #e60039;
+    }
+    h1 {
+      text-shadow: 2px 2px 6px black;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>💘 Love Calculator 💘</h1>
+
+  <input type="text" id="yourName" placeholder="Your Name" required>
+  <input type="text" id="partnerName" placeholder="Partner Name" required>
+  <input type="button" value="Calculate" id="submit">
+  <p id="demo"></p>
+  <p id="reality"></p>
+
+  <script>
+    document.getElementById("submit").addEventListener("click", myFunction);
+
+    function myFunction() {
+      const yourName = document.getElementById("yourName").value.trim();
+      const partnerName = document.getElementById("partnerName").value.trim();
+
+      
+      if (!yourName || !partnerName) {
+        document.getElementById("demo").innerHTML = "❗ Dui jon er nam likhte hobe!";
+        document.getElementById("reality").innerHTML = "";
+        return;
+      }
+
+      const result = Math.floor(Math.random() * 100);
+      document.getElementById("demo").innerHTML = `💖 Love Percentage between ${yourName} and ${partnerName}: ${result}%`;
+
+      if (result > 50) {
+        const arr = [
+          "Ekhon ekhane peli kintu bastobe ki peyechis??",
+          "Ami jani tuiw emntai cas kintu reality tor vabonay hoyna.",
+          "Ekhaner moto jodi real life e tui oke peti!",
+          "Ish jodi sotti oke peti tahole okew eta dekhati taina??"
+        ];
+        const index = Math.floor(Math.random() * arr.length);
+        document.getElementById("reality").innerHTML = arr[index];
+      } else {
+        const arr = [
+          "Tui ekhanew here geli, bastobe tor harar kosto ta bujhi 😢",
+          "Nh caitew here geli... real life ew ki herechis??",
+          "Tor vaggotai kharap nh — ekhane nh, sottikar orthew nh peli.",
+          "Keu kothaw nei, toke dekhle etai mone hoy 😔"
+        ];
+        const index = Math.floor(Math.random() * arr.length);
+        document.getElementById("reality").innerHTML = arr[index];
+      }
+    }
+  </script>
+</body>
+</html>
