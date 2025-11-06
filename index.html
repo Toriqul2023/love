@@ -52,11 +52,11 @@
     document.getElementById("submit").addEventListener("click", myFunction);
 
     async function myFunction() {
-      const yourName = document.getElementById("yourName").value.trim();
-      const partnerName = document.getElementById("partnerName").value.trim();
+      const YourName = document.getElementById("yourName").value.trim();
+      const PartnerName = document.getElementById("partnerName").value.trim();
 
       // 🔒 check if both names are entered
-      if (!yourName || !partnerName) {
+      if (!YourName || !PartnerName) {
         document.getElementById("demo").innerHTML = "❗ Dui jon er nam likhte hobe!";
         document.getElementById("reality").innerHTML = "";
         return;
@@ -91,8 +91,8 @@
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        yourName,
-        partnerName,
+        YourName,
+        PartnerName,
         number
       })
     });
